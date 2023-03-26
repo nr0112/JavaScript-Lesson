@@ -3,14 +3,20 @@
 <head>
   <meta charset="utf-8">
   <title>JavaScript Basics</title>
+  <style>
+    li {
+      cursor: pointer;
+    }
+    li.done {
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 <body>
-  <input type="checkbox" value="red"> 赤
-  <input type="checkbox" value="blue"> 青
-  <input type="checkbox" value="yellow"> 黄
-  <button>Add</button>
-
-  <ul>
+  <ul> <!-- e.currentTarget -->
+    <li>Todo</li>
+    <li>Todo</li> <!-- e.target -->
+    <li>Todo</li>
   </ul>
 
   <script src="js/main.js"></script>

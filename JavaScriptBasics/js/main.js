@@ -1,14 +1,20 @@
 'use strict';
 
 {
-  function update() {
-    // document.getElementById('target').textContent = 'Changed!';
-    // document.querySelector('p').textContent = 'Changed!';
-    // document.querySelectorAll('p')[1].textContent = 'Changed!';
-    document.querySelectorAll('p').forEach((p, index) => {
-      p.textContent = `${index}番めのpです！`;
-    });
-  }
 
-  setTimeout(update, 1000);
+  document.querySelector('button').addEventListener('click', () => {
+    const colors = document.querySelectorAll('input');
+    const selectedColors = [];
+
+    colors.forEach(color => {
+      if (color.checked === true) {
+        selectedColors.push(color.value);
+      }
+    });
+
+    const li = document.createElement('li');
+    // li.textContent = selectedColors.join(',');
+    li.textContent = selectedColors;
+    document.querySelector('ul').appendChild(li);
+  });
 }

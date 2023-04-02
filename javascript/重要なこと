@@ -1,0 +1,17 @@
+Number 数値
+String 文字列
+Boolean 真偽値
+null 値が存在しない状態を指す
+メソッド 特定のクラスやオブジェクトに所属するグループ
+
+文書内から特定の要素を取得
+querySelector() 
+id を指定して要素を探すには特殊なメソッドが用意
+getElementById() 
+複数の要素を取得
+querySelectorAll()
+複数の要素を取得する方法
+ getElementsByTagName() 
+ getElementsByClassName()
+ 要素にイベントというものを設定
+ addEventListener()

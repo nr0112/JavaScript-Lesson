@@ -8,31 +8,29 @@
 				color: red;
 				background-color: skyblue;
 			}
-			
 			.my-border{
 				border-bottom: 4px solid orange;
 			}
 		</style>
 	</head>
 	<body>
-		<h1 id="target" data-translation="Dotinstall">ドットインストール</h1>
-		<p>こんにちは。こんにちは。こんにちは。</p>
-		<p>こんにちは。こんにちは。こんにちは。</p>
-		<p>こんにちは。こんにちは。こんにちは。</p>
-		
+		<ul>
+			<li>item 0</li>
+			<li>item 1</li>
+		</ul>
 		<button>
 			Run
 		</button>
-		
 		<script>
 			'use strict';
 			{
-				function update(){
-					const target = document.querySelector('#target');
-					target.textContent = target.dataset.translation;
-				}
-				
-				document.querySelector('button').addEventListener('click', update);
+				document.querySelector('button').addEventListener('click', ()=>{
+					const item2 = document.createElement('li');
+					item2.textContent = 'item 2';
+					
+					const ul = document.querySelector('ul');
+					ul.appendChild(item2);
+				});
 			}
 		</script>
 	</body>

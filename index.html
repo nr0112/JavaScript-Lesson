@@ -5,7 +5,7 @@
 		<title>JavaScript Basics</title>
 	</head>
 	<body>
-		<h1 id="target">ドットインストール</h1>
+		<h1 id="target" title="見出しです">ドットインストール</h1>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
@@ -18,7 +18,10 @@
 			'use strict';
 			{
 				function update(){
-					document.querySelector('#target').textContent = 'Changed!';
+					const target = document.querySelector('#target');
+					target.textContent = 'Changed!';
+					target.style.color = 'red';
+					target.style.backgroundColor = 'skyblue';
 				}
 				
 				document.querySelector('button').addEventListener('click', update);

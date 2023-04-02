@@ -15,7 +15,7 @@
 		</style>
 	</head>
 	<body>
-		<h1 id="target" class="my-border">ドットインストール</h1>
+		<h1 id="target" data-translation="Dotinstall">ドットインストール</h1>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
@@ -29,7 +29,7 @@
 			{
 				function update(){
 					const target = document.querySelector('#target');
-					target.classList.toggle('my-color');
+					target.textContent = target.dataset.translation;
 				}
 				
 				document.querySelector('button').addEventListener('click', update);

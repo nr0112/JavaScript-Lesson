@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JavaScript Basics</title>
+	</head>
+	<body>
+		<h1 id="target">ドットインストール</h1>
+		<p>こんにちは。こんにちは。こんにちは。</p>
+		<p>こんにちは。こんにちは。こんにちは。</p>
+		<p>こんにちは。こんにちは。こんにちは。</p>
+		
+		<script>
+			'use strict';
+			{
+				function update(){
+					// document.querySelector('h1').textContent = 'Changed!';
+					// document.querySelector('#target').textContent = 'Changed!';
+					document.getElementById('target').textContent = 'Changed!';
+				}
+				
+				setTimeout(update, 1000);
+			}
+		</script>
+	</body>
+</html>

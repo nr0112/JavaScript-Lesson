@@ -10,15 +10,18 @@
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		
+		<button>
+			Run
+		</button>
+		
 		<script>
 			'use strict';
 			{
 				function update(){
-					// document.querySelectorAll('p')[1].textContent = 'Changed!';
-					document.querySelectorAll('p').forEach((p, index) => p.textContent = `${index}番目のpです`);
+					document.querySelector('#target').textContent = 'Changed!';
 				}
 				
-				setTimeout(update, 1000);
+				document.querySelector('button').addEventListener('click', update);
 			}
 		</script>
 	</body>

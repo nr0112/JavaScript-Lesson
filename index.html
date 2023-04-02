@@ -3,9 +3,19 @@
 	<head>
 		<meta charset="utf-8">
 		<title>JavaScript Basics</title>
+		<style>
+			.my-color {
+				color: red;
+				background-color: skyblue;
+			}
+			
+			.my-border{
+				border-bottom: 4px solid orange;
+			}
+		</style>
 	</head>
 	<body>
-		<h1 id="target" title="見出しです">ドットインストール</h1>
+		<h1 id="target" class="my-border">ドットインストール</h1>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
 		<p>こんにちは。こんにちは。こんにちは。</p>
@@ -19,9 +29,7 @@
 			{
 				function update(){
 					const target = document.querySelector('#target');
-					target.textContent = 'Changed!';
-					target.style.color = 'red';
-					target.style.backgroundColor = 'skyblue';
+					target.className = 'my-color my-border';
 				}
 				
 				document.querySelector('button').addEventListener('click', update);

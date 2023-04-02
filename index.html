@@ -29,7 +29,7 @@
 			{
 				function update(){
 					const target = document.querySelector('#target');
-					target.className = 'my-color my-border';
+					target.classList.toggle('my-color');
 				}
 				
 				document.querySelector('button').addEventListener('click', update);

@@ -17,6 +17,7 @@
 		<ul>
 			<li>item 0</li>
 			<li>item 1</li>
+			<li>item 2</li>
 		</ul>
 		<button>
 			Run
@@ -25,11 +26,13 @@
 			'use strict';
 			{
 				document.querySelector('button').addEventListener('click', ()=>{
-					const item2 = document.createElement('li');
-					item2.textContent = 'item 2';
+					const item0 = document.querySelectorAll('li')[0];
+					const copy = item0.cloneNode(true);
+					
 					
 					const ul = document.querySelector('ul');
-					ul.appendChild(item2);
+					const item2 = document.querySelectorAll('li')[2];
+					ul.insertBefore(copy, item2);
 				});
 			}
 		</script>

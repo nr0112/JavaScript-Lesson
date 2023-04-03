@@ -15,27 +15,25 @@
 		</style>
 	</head>
 	<body>
-		<button>Run</button>
+		<textarea></textarea>
 		<ul>
 		</ul>
 		<script>
 			'use strict';
 			{
-				document.querySelector('button').addEventListener('dbclick', ()=>{
-					const li = document.createElement('li');
-					li.textContent = 'Double clicked!';
-					document.querySelector('ul').appendChild(li);
+				const text = document.querySelector('textarea');
+				text.addEventListener('focus', () => {
+					console.log('focus');
 				});
-				document.querySelector('button').addEventListener('touchmove', e=>{
-					const li = document.createElement('li');
-					li.textContent = `${e.touches[0].clientX}, ${e.touches[0].clientY}`;
-					document.querySelector('ul').appendChild(li);
+				text.addEventListener('blur', () => {
+					console.log('blur');
 				});
-				
-				document.addEventListener('keydown', e=>{
-					const li = document.createElement('li');
-					li.textContent = e.key;
-					document.querySelector('ul').appendChild(li);
+				text.addEventListener('input', () => {
+					// console.log('input');
+					console.log(text.value.length);
+				});
+				text.addEventListener('change', () => {
+					console.log('change');
 				});
 			}
 		</script>

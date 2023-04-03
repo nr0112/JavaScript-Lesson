@@ -22,15 +22,19 @@
 			'use strict';
 			{
 				document.querySelector('button').addEventListener('dbclick', ()=>{
-					
 					const li = document.createElement('li');
 					li.textContent = 'Double clicked!';
 					document.querySelector('ul').appendChild(li);
 				});
-				document.querySelector('button').addEventListener('touchmove', ()=>{
-					
+				document.querySelector('button').addEventListener('touchmove', e=>{
 					const li = document.createElement('li');
-					li.textContent = 'Moved';
+					li.textContent = `${e.touches[0].clientX}, ${e.touches[0].clientY}`;
+					document.querySelector('ul').appendChild(li);
+				});
+				
+				document.addEventListener('keydown', e=>{
+					const li = document.createElement('li');
+					li.textContent = e.key;
 					document.querySelector('ul').appendChild(li);
 				});
 			}

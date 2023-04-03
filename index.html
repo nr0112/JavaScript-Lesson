@@ -15,21 +15,23 @@
 		</style>
 	</head>
 	<body>
+		<select>
+			<option value="red">赤</option>
+			<option value="blue">青</option>
+			<option value="yellow">黄</option>
+		</select>
+		<button>Add</button>
+	
 		<ul>
 		</ul>
-		<input type="text">
-		<button>Add</button>
 		<script>
 			'use strict';
 			{
 				document.querySelector('button').addEventListener('click', ()=>{
 					const li = document.createElement('li');
-					const text = document.querySelector('input');
-					li.textContent = text.value;
+					const color = document.querySelector('select');
+					li.textContent = `${color.value} - ${color.selectedIndex}`;
 					document.querySelector('ul').appendChild(li);
-					
-					text.value = '';
-					text.focus();
 				});
 			}
 		</script>

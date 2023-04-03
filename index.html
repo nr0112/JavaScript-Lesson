@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>JavaScript Basics</title>
+		<meta name="viewport" content="width=device-width">
 		<style>
 			.my-color {
 				color: red;
@@ -15,20 +16,20 @@
 	</head>
 	<body>
 		<ul>
-			<li>item 0</li>
-			<li>item 1</li>
-			<li>item 2</li>
 		</ul>
-		<button>
-			Run
-		</button>
+		<input type="text">
+		<button>Add</button>
 		<script>
 			'use strict';
 			{
 				document.querySelector('button').addEventListener('click', ()=>{
-					const item1 = document.querySelectorAll('li')[1];
+					const li = document.createElement('li');
+					const text = document.querySelector('input');
+					li.textContent = text.value;
+					document.querySelector('ul').appendChild(li);
 					
-					document.querySelector('ul').removeChild(item1);
+					text.value = '';
+					text.focus();
 				});
 			}
 		</script>

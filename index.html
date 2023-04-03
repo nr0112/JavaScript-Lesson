@@ -15,22 +15,26 @@
 		</style>
 	</head>
 	<body>
-		<select>
-			<option value="red">赤</option>
-			<option value="blue">青</option>
-			<option value="yellow">黄</option>
-		</select>
+		<input type="radio" name="color" value="red" />赤
+		<input type="radio" name="color" value="blue" s>青
+		<input type="radio" name="color" value="yellow" />黄
 		<button>Add</button>
-	
 		<ul>
 		</ul>
 		<script>
 			'use strict';
 			{
 				document.querySelector('button').addEventListener('click', ()=>{
+					const colors = document.querySelectorAll('input');
+					let selectedColor;
+					colors.forEach(color => {
+						if(color.checked){
+							selectedColor = color.value;
+						}
+					})
+					
 					const li = document.createElement('li');
-					const color = document.querySelector('select');
-					li.textContent = `${color.value} - ${color.selectedIndex}`;
+					li.textContent = selectedColor;
 					document.querySelector('ul').appendChild(li);
 				});
 			}

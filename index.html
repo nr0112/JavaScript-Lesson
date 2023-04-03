@@ -15,26 +15,22 @@
 		</style>
 	</head>
 	<body>
-		<input type="checkbox" value="red" />赤
-		<input type="checkbox" value="blue" s>青
-		<input type="checkbox" value="yellow" />黄
-		<button>Add</button>
+		<button>Run</button>
 		<ul>
 		</ul>
 		<script>
 			'use strict';
 			{
-				document.querySelector('button').addEventListener('click', ()=>{
-					const colors = document.querySelectorAll('input');
-					let selectedColors = [];
-					colors.forEach(color => {
-						if(color.checked){
-							selectedColors.push(color.value);
-						}
-					})
+				document.querySelector('button').addEventListener('dbclick', ()=>{
 					
 					const li = document.createElement('li');
-					li.textContent = selectedColors.join(',');
+					li.textContent = 'Double clicked!';
+					document.querySelector('ul').appendChild(li);
+				});
+				document.querySelector('button').addEventListener('touchmove', ()=>{
+					
+					const li = document.createElement('li');
+					li.textContent = 'Moved';
 					document.querySelector('ul').appendChild(li);
 				});
 			}

@@ -5,28 +5,27 @@
 		<title>JavaScript Basics</title>
 		<meta name="viewport" content="width=device-width">
 		<style>
-			.my-color {
-				color: red;
-				background-color: skyblue;
+			li {
+				cursor: pointer;
 			}
-			.my-border{
-				border-bottom: 4px solid orange;
+			li.done{
+				text-decoration: line-through;
 			}
 		</style>
 	</head>
 	<body>
-		<form>
-			<input type="text">
-			<button>
-				Post
-			</button>
-		</form>
+		<ul>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+		</ul>
 		<script>
 			'use strict';
 			{
-				document.querySelector('form').addEventListener('submit', e => {
-					e.preventDefault();
-					console.log('submit');
+				document.querySelector('ul').addEventListener('click', e => {
+					if(e.target.nodeName === 'LI'){
+						e.target.classList.toggle('done');
+					}
 				})
 			}
 		</script>
